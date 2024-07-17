@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nanoid</name>
+    </assembly>
+    <members>
+        <member name="T:NanoidDotNet.CryptoRandom">
+            <inheritdoc />
+            <summary>
+            Implementation of <see cref="T:System.Random"></see> using <see cref="T:System.Security.Cryptography.RandomNumberGenerator"></see>.
+            </summary>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.#ctor">
+            <inheritdoc />
+            <summary>
+            </summary>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.NextBytes(System.Byte[])">
+             <summary>
+            
+             </summary>
+             <param name="buffer"></param>
+             <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.NextDouble">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.Next(System.Int32,System.Int32)">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.Next">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NanoidDotNet.CryptoRandom.Next(System.Int32)">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <param name="maxValue"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="T:NanoidDotNet.Nanoid">
+            <summary>
+            Static class containing all functions and constants related to Nanoid.
+            </summary>
+        </member>
+        <member name="T:NanoidDotNet.Nanoid.Alphabets">
+            <summary>
+            Useful alphabets for Nanoid generation.
+            Taken from https://github.com/CyberAP/nanoid-dictionary
+            and https://github.com/SasLuca/zig-nanoid/blob/91e0a9a8890984f3dcdd98c99002a05a83d0ee89/src/nanoid.zig#L4.
+            </summary>
+        </member>
+        <member name="T:NanoidDotNet.Nanoid.Alphabets.SubAlphabets">
+            <summary>
+            Used for composition and documentation in building proper Alphabets.
+            Not recommended to be used on their own as alphabets for Nanoid.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeDigits">
+            <summary>
+            All digits that don't look similar to other digits or letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeLettersLowercase">
+            <summary>
+            All lowercase letters that don't look similar to other letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeLettersUppercase">
+            <summary>
+            All uppercase letters that don't look similar to other letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeLetters">
+            <summary>
+            All letters that don't look similar to other letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeSafeDigits">
+            <summary>
+            All digits that don't look similar to other digits or letters
+            and prevent potential obscene words from appearing in generated ids.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeSafeLettersLowercase">
+            <summary>
+            All lowercase letters that don't look similar to other digits or letters
+            and prevent potential obscene words from appearing in generated ids.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeSafeLettersUppercase">
+            <summary>
+            All uppercase letters that don't look similar to other digits or letters
+            and prevent potential obscene words from appearing in generated ids.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.NoLookAlikeSafeLetters">
+            <summary>
+            All letters that don't look similar to other digits or letters
+            and prevent potential obscene words from appearing in generated ids.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.SubAlphabets.Symbols">
+            <summary>
+            URL safe symbols that can be used in a Nanoid. Part of the default alphabet.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.Digits">
+            <summary>
+            All digits [0, 9].
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.HexadecimalLowercase">
+            <summary>
+            English hexadecimal with lowercase characters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.HexadecimalUppercase">
+            <summary>
+            English hexadecimal with uppercase characters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.LowercaseLetters">
+            <summary>
+            Lowercase English alphabet letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.UppercaseLetters">
+            <summary>
+            Uppercase English alphabet letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.Letters">
+            <summary>
+            Lowercase and uppercase English alphabet letters.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.LowercaseLettersAndDigits">
+            <summary>
+            Lowercase English alphabet letters and digits.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.UppercaseLettersAndDigits">
+            <summary>
+            Uppercase English alphabet letters and digits.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.LettersAndDigits">
+            <summary>
+            English alphabet letters and digits.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.NoLookAlikes">
+            <summary>
+            English alphabet letters and digits without lookalikes: 1, l, I, 0, O, o, u, v, 5, S, s, 2, Z.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.NoLookAlikesSafe">
+            <summary>
+            English alphabet letters and digits without lookalikes (1, l, I, 0, O, o, u, v, 5, S, s, 2, Z)
+            and with removed vowels and the following letters: 3, 4, x, X, V.
+            This list should protect you from accidentally getting obscene words in generated strings.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.Alphabets.Default">
+            <summary>
+            The default alphabet used by Nanoid. Includes ascii digits, letters and the symbols '_' and '-'.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid.DefaultIdSize">
+            <summary>
+            The default size of a Nanoid.
+            </summary>
+        </member>
+        <member name="F:NanoidDotNet.Nanoid._globalRandom">
+            <summary>
+            Backing field for <see cref="P:NanoidDotNet.Nanoid.GlobalRandom"/>.
+            </summary>
+        </member>
+        <member name="P:NanoidDotNet.Nanoid.GlobalRandom">
+            <summary>
+            Global <see cref="T:NanoidDotNet.CryptoRandom"/> instance used to conveniently generate Nanoids.
+            </summary>
+            <remarks>
+            Lazily initialized in order to account for the ThreadStatic attribute (learn more here: https://stackoverflow.com/a/18086509)
+            </remarks>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.GenerateAsync(System.String,System.Int32)">
+            <summary>
+            Generate a Nanoid using a global instance of <see cref="T:NanoidDotNet.CryptoRandom"/>.
+            </summary>
+            <param name="alphabet">The set of characters used in generating the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.Alphabets.Default">Alphabets.Default.</see></param>
+            <param name="size">The length of the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.DefaultIdSize"/>.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            The task result contains a new string representing a random nanoid with the specified <paramref name="alphabet"/> and <paramref name="size"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">If any of the provided arguments are null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="alphabet"/>'s length is outside the range [0, 256] or if <paramref name="size"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.GenerateAsync(System.Random,System.String,System.Int32)">
+            <summary>
+            Generate a Nanoid.
+            </summary>
+            <param name="random">A random number generator.</param>
+            <param name="alphabet">The set of characters used in generating the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.Alphabets.Default">Alphabets.Default.</see></param>
+            <param name="size">The length of the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.DefaultIdSize"/>.</param>
+            <returns>
+            A task that represents the asynchronous operation.
+            The task result contains a new string representing a random nanoid with the specified <paramref name="alphabet"/> and <paramref name="size"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">If any of the provided arguments are null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="alphabet"/>'s length is outside the range [0, 256] or if <paramref name="size"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.Generate(System.String,System.Int32)">
+            <summary>
+            Generate a Nanoid using a global instance of <see cref="T:NanoidDotNet.CryptoRandom"/>.
+            </summary>
+            <param name="alphabet">The set of characters used in generating the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.Alphabets.Default">Alphabets.Default.</see></param>
+            <param name="size">The length of the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.DefaultIdSize"/>.</param>
+            <returns>A new string representing a random nanoid with the specified <paramref name="alphabet"/> and <paramref name="size"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If any of the provided arguments are null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="alphabet"/>'s length is outside the range [0, 256] or if <paramref name="size"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.Generate(System.Random,System.String,System.Int32)">
+            <summary>
+            Generate a Nanoid.
+            </summary>
+            <param name="random">A random number generator.</param>
+            <param name="alphabet">The set of characters used in generating the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.Alphabets.Default">Alphabets.Default.</see></param>
+            <param name="size">The length of the id. Defaults to <see cref="F:NanoidDotNet.Nanoid.DefaultIdSize"/>.</param>
+            <returns>A new string representing a random nanoid with the specified <paramref name="alphabet"/> and <paramref name="size"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If any of the provided arguments are null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="alphabet"/>'s length is outside the range [0, 256] or if <paramref name="size"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.GenerateImpl(System.Random,System.String,System.Int32)">
+            <summary>
+            Internal implementation of the nanoid algorithm.
+            </summary>
+            <remarks>
+            To be called by public facing <c>Generate</c> functions.
+            </remarks>
+        </member>
+        <member name="M:NanoidDotNet.Nanoid.Clz32(System.Int32)">
+            <summary>
+            Counts leading zeros of <paramref name="x"/>.
+            </summary>
+            <param name="x">Input number.</param>
+            <returns>Number of leading zeros.</returns>
+            <remarks>
+            Courtesy of spender/Sunsetquest see https://stackoverflow.com/a/10439333/623392.
+            </remarks>
+        </member>
+    </members>
+</doc>

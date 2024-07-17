@@ -1,0 +1,6 @@
+﻿[Bb]in/
+[Oo]bj/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
